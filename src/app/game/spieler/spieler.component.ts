@@ -9,6 +9,7 @@ export class SpielerComponent implements OnInit {
 
   gewuerfelt = 'false';
   @Input() name = "Kein Name"
+  zahlen = [0, 0, 0];
 
   constructor() { }
 
@@ -17,6 +18,13 @@ export class SpielerComponent implements OnInit {
 
   wuerfeln() {
     this.gewuerfelt = 'true';
+  }
+
+  wuerfelnDone() {
+    console.log('Wuerfeln done');
+    this.zahlen[0] = 1;
+    this.zahlen[1] = 1;
+    this.zahlen[2] = 1;
   }
 
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WurfelComponent } from './wurfel.component';
+import { WuerfelComponent } from './wuerfel.component';
 
-describe('WurfelComponent', () => {
-  let component: WurfelComponent;
-  let fixture: ComponentFixture<WurfelComponent>;
+describe('WuerfelComponent', () => {
+  let component: WuerfelComponent;
+  let fixture: ComponentFixture<WuerfelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WurfelComponent ]
+      declarations: [ WuerfelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WurfelComponent);
+    fixture = TestBed.createComponent(WuerfelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

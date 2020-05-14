@@ -1,1 +1,7 @@
-<h2>{{name}}</h2><app-wurfel [wuerfeln]="gewuerfelt"></app-wurfel><br><br><button (click)="wuerfeln()" type="button" class="btn btn-primary">Würfeln</button>
+<h2>{{name}}</h2>
+<app-wuerfelbecher [wuerfeln]="gewuerfelt" (gewuerfelt)="wuerfelnDone()"></app-wuerfelbecher>
+<div style="width: 100%">
+  <app-wuerfel *ngFor="let zahl of zahlen" [zahl]="zahl"></app-wuerfel>
+</div>
+<br><br>
+<button (click)="wuerfeln()" type="button" class="btn btn-primary">Würfeln</button>

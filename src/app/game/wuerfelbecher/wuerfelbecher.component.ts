@@ -1,10 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {animate, AnimationEvent, keyframes, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
-  selector: 'app-wurfel',
-  templateUrl: './wurfel.component.html',
-  styleUrls: ['./wurfel.component.scss'],
+  selector: 'app-wuerfelbecher',
+  templateUrl: './wuerfelbecher.component.html',
+  styleUrls: ['./wuerfelbecher.component.scss'],
   animations: [
     trigger('wuerfeln', [
       state('true', style({transform: 'rotate(180deg)'})),
@@ -31,13 +31,20 @@ import {animate, keyframes, state, style, transition, trigger} from "@angular/an
     ])
   ]
 })
-export class WurfelComponent implements OnInit {
+export class WuerfelbecherComponent implements OnInit {
 
   @Input() wuerfeln = 'false';
+  @Output() gewuerfelt : EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  wuerfelnDoneEvent(event: AnimationEvent) {
+    console.log('wuerfelnDoneEvent');
+    if(event.toState == 'true') {
+      this.gewuerfelt.emit(null);
+    }
+  }
 }
